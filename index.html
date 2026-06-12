@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ultimate Gaming Platform hub</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Welcome Screen -->
+    <div id="welcomeSection" class="container">
+      <div class="welcome-box">
+        <h1>🎮 Welcome to Gaming Hub v1.1.1</h1>
+        <div class="credentials-box">
+          <h2>Demo Credentials:</h2>
+          <div class="credential-item">
+            <span class="label">Email:</span>
+            <span class="value">synorrenthr@admin.com</span>
+            <button class="copy-btn" onclick="copyToClipboard('synorrenthr@admin.com')">Copy</button>
+          </div>
+          <div class="credential-item">
+            <span class="label">Password:</span>
+            <span class="value">#</span>
+            <button class="copy-btn" onclick="copyToClipboard('#')">Copy</button>
+          </div>
+        </div>
+        <button class="start-btn" onclick="goToLogin()">Start Gaming 🎮</button>
+      </div>
+    </div>
+
+    <!-- Login Form Section -->
+    <div id="loginSection" class="container hidden">
+      <div class="login-box">
+        <h1>🎮 Gaming Hub 3000</h1>
+        <form id="loginForm">
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required />
+            <span class="error" id="emailError"></span>
+          </div>
+          
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required />
+            <span class="error" id="passwordError"></span>
+          </div>
+          
+          <button type="submit" class="login-btn">Login</button>
+        </form>
+        <p id="successMessage" class="success"></p>
+        <button class="back-to-welcome" onclick="goToWelcome()">← Back</button>
+      </div>
+    </div>
+
+    <!-- Admin Dashboard Section -->
+    <div id="dashboardSection" class="dashboard hidden">
+      <div class="navbar">
+        <h2>🎮 Gaming Hub 3000</h2>
+        <div class="navbar-right">
+          <input type="text" id="searchGames" placeholder="Search games..." class="search-box">
+          <select id="filterCategory" class="search-box">
+            <option value="">All Games</option>
+            <option value="2D">2D Games</option>
+            <option value="Game Boy">Game Boy</option>
+            <option value="NES">NES</option>
+            <option value="N64">N64</option>
+            <option value="Puzzle">Puzzle</option>
+            <option value="Action">Action</option>
+            <option value="Casual">Casual</option>
+          </select>
+          <button id="logoutBtn" class="logout-btn">Logout</button>
+        </div>
+      </div>
+      
+      <div class="games-container" id="gamesContainer"></div>
+    </div>
+
+    <!-- Game Play Section -->
+    <div id="gameSection" class="game-section hidden">
+      <div class="game-header">
+        <button id="backBtn" class="back-btn">← Back</button>
+        <h2 id="gameTitle">Game</h2>
+        <div class="game-stats">
+          <span id="gameScore">Score: 0</span>
+          <span id="gameLevel">Level: 1</span>
+        </div>
+      </div>
+      <div id="gameContent" class="game-content"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
